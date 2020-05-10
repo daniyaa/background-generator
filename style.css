@@ -1,0 +1,232 @@
+*,
+*::after,
+*::before {
+    margin:0;
+    padding:0;
+    box-sizing:inherit;
+}
+html{
+    font-size: 62.5%;
+}
+body {
+    font-family: 'Righteous', cursive;
+    font-weight: 400;
+    font-size:1.6rem;
+    line-height:1.7;
+    color: #2F4F4F;
+    padding: 2.5rem;
+    box-sizing:border-box;
+}
+.header {
+    position: relative;
+    background-image:linear-gradient(
+        to right bottom,
+        rgba(160, 241, 234, 0.795), rgba(234, 214, 238, 0.897)),
+        url(../img/headerimg.jpeg);
+    height:90vh;
+    background-size: cover;
+    background-position:top;
+    clip-path: polygon(0 0,100% 0,100% 87%,0 100%)
+   }
+.header__log-box {
+   position: absolute;
+   top: 4rem;
+   left: 4rem;
+}
+
+.header__log {
+   height:8.2rem;
+   animation: bounceIn 0.6s;
+  transform: rotate(0deg) scale(1) translateZ(0);
+  transition: all 0.4s cubic-bezier(.8,1.8,.75,.75);
+  cursor: pointer;
+  animation-delay: 0.2s;
+}
+
+.header__log:hover{
+    transform: rotate(10deg) scale(1.1);
+
+}
+
+
+.header__text-box{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+
+.header-primary{
+    color: #2F4F4F;
+    text-transform: uppercase;
+    text-align: center;
+    backface-visibility: hidden;
+}
+/* this doesn't work */
+.heading-primary--main{
+    text-align: center;
+    display: block;
+    font-size: 3.5rem;
+    font-weight:650;
+    letter-spacing: 2rem;
+    animation: moveInLeft 1s ease-out;
+    animation-delay: 0.2s;
+    backface-visibility: hidden;
+    animation-fill-mode: backwards;
+
+}
+
+.heading-primary--est{
+    text-align: center;
+    display: block;
+    font-size: 2.2rem;
+    font-weight: 300;
+    letter-spacing: .95rem;
+    animation: moveInRight 1s ease-out;
+    animation-delay: 0.2s;
+    backface-visibility: hidden;
+    animation-fill-mode: backwards;
+}
+
+.heading-primary--app{
+    text-align: center;
+    display: block;
+    font-size: 1.8rem;
+    font-weight:260;
+    letter-spacing: .6rem;
+    animation-fill-mode: backwards;
+}
+
+.heading-primary--locatn{
+    text-align: center;
+    display: block;
+    font-size: 1.5rem;
+    font-weight:200;
+    letter-spacing: .5rem;
+    margin-bottom: 2rem;
+    animation-fill-mode: backwards;
+}
+
+@keyframes moveInLeft{
+    0%{
+        opacity:0;
+        transform: translateX(-10rem);
+        }
+
+    80%{
+        transform: translateX(.7rem);
+    }
+    
+    100%{
+        opacity:1;
+        transform: translateX(0);
+
+    }
+}
+
+@keyframes moveInRight{
+    0%{
+        opacity:0;
+        transform: translateX(10rem);
+        }
+
+    80%{
+        transform: translateX(-.7rem);
+    }
+    
+    100%{
+        opacity:1;
+        transform: translateX(0px);
+
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+      opacity: 1;
+      transform: scale(.3);
+    } 
+  
+    50% {
+      opacity: 1;
+      transform: scale(1.05);
+    } 
+  
+    70% {
+      opacity: 1;
+      transform: scale(.9);
+    }
+  
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+.btn:link,.btn:visited{
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    border-radius: 10rem;
+    transition: all .2s;
+    position: relative;
+
+}
+
+.btn--white{
+    background-color: #3a2838;
+    color:rgb(255, 255, 255);
+   
+}
+
+.btn:hover{
+    transform: translateY(-.3rem);
+    box-shadow: 0 1rem 2rem #2F4F4F;
+}
+
+.btn:active{
+    transform: translateY(-.1rem);
+    box-shadow: 0 .5rem 1rem #2F4F4F;
+}
+
+.btn::after{
+    content: "";
+    display: inline-block;
+    height:100%;
+    width: 100%;
+    border-radius: 10rem;
+    position: absolute;
+    top:0;
+    left:0;
+    z-index:-1;
+    transition: all .4s;
+}
+
+.btn--white::after{
+    background-color:#3a2838 ;
+}
+
+.btn:hover::after{
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
+@keyframes moveInBottom{
+    0%{
+        opacity:0;
+        transform: translateY(3rem);
+        }
+
+    100%{
+        opacity:1;
+        transform: translate(0);
+
+    }
+}
+
+.btn--animation-white{
+    animation: moveInBottom .5s ease-out .75s;
+    animation-fill-mode: backwards;
+}
